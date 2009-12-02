@@ -39,7 +39,7 @@ if os.name == 'nt':
 setup(
   console=[{
       # List of scripts to convert into gui exes
-      'script': 'dist/g-leecher.py',
+      'script': 'dist/googleleecher.py',
       # Icon resources
       'icon_resources': [(1, 'dist/favicon.ico')],
   }],

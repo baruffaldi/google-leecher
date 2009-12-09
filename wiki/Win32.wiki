@@ -1,0 +1,15 @@
+#summary oooh...
+
+= Introduction =
+
+*Dependencies*:
+ # USER32.dll - C:\WINDOWS\system32\USER32.dll
+ # SHELL32.dll - C:\WINDOWS\system32\SHELL32.dll
+ # WSOCK32.dll - C:\WINDOWS\system32\WSOCK32.dll
+ # ADVAPI32.dll - C:\WINDOWS\system32\ADVAPI32.dll
+ # WS2_32.dll - C:\WINDOWS\system32\WS2_32.dll
+ # KERNEL32.dll - C:\WINDOWS\system32\KERNEL32.dll
+
+*Compiling*
+
+C:\python-path> python setup.py py2exe

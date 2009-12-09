@@ -1,0 +1,24 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+I would finish it in order to start the development of the google-leecher-gui where we will be able to view a preview of what we're going to download.
+
+= Details =
+
+ * *Features*
+  # Support search channel switch ( images, books, etc, etc )
+
+ * *Windows* Installer
+  # Check for dependencies
+
+ * *Project* google-leecher-gui
+  # GUI written in python which uses this class
+
+=Contributors=
+
+At the moment, I'm alone.
+
+*If you want to give your contribute to this project do not exitate to contact me and feel free to tell me everything you think about this class.*
+
+A _right arm_ is always welcome ;)

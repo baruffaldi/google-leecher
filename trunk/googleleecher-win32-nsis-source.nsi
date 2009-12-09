@@ -17,6 +17,7 @@
 !define REG_ROOT "HKCU"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
 !define UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
+!define SRC_PATH "C:\Documents and Settings\bornslippy\Documenti\Eclipse Workspace\g-leecher\src\dist\"
 
 !define REG_START_MENU "Start Menu Folder"
 
@@ -41,6 +42,7 @@ BrandingText "${APP_NAME}"
 XPStyle on
 InstallDirRegKey "${REG_ROOT}" "${REG_APP_PATH}" ""
 InstallDir "$PROGRAMFILES\Google Leecher"
+Icon "${SRC_PATH}favicon.ico"
 
 ######################################################################
 

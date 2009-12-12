@@ -11,6 +11,7 @@ I would finish it in order to start the development of the google-leecher-gui wh
   # Support search channel switch ( images, books, etc, etc )
   # When interactive mode, choose before download all files with a queue system
   # Progress bar when downloading in console
+  # Directory parameter
 
  * *Windows* Installer
   # Check for dependencies

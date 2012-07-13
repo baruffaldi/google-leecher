@@ -232,6 +232,7 @@ class GoogleLeecher(object):
     print "         --download | -d        - download results"
     print "            --force | -f        - disable interactive mode"
     print "        --recursive | -r        - get all results"
+    print "             --type | -t=web    - search type(web,images,etc.)"
     print " --useragent=string | -u=Moz... - specify the user agent to use"
     print "        --limit=int | -l=%i      - limit to max N results (default:%i)"  % ( self.limit, self.limit )
     print "        --start=int | -s=%i      - set the search results offset (default:%i)" %  ( self.start, self.start )

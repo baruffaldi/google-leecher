@@ -42,16 +42,16 @@ integrate it on your project.
 @copyright: some rights reserved
 @license: MIT License
 @organization: CoolMinds Developers Network
-@version: 0.4.3
+@version: 0.4.4
 @todo: check gdata response encoding
 """
 
 __author__ = "Filippo Baruffaldi"
-__version__ = "0.4.3"
+__version__ = "0.4.4"
 
 DEFAULT_USERAGENT = 'Google Leecher (+http://code.google.com/p/google-leecher)'
 UPDATES_URL = "http://google-leecher.googlecode.com/files/latest.txt"
-G_DATA_API_URL = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=%s&start=%s&rsz=large'
+G_DATA_API_URL = 'http://ajax.googleapis.com/ajax/services/search/%s?v=1.0&q=%s&start=%s&rsz=large'
 
 class GoogleLeecher(object):
   query = ""
@@ -79,8 +79,9 @@ class GoogleLeecher(object):
   @param useragent: [string] specify the user agent to use
   @param recursive: [bool] get all results
   """
-  def __init__(self, query=False,ext=False,limit=False,start=False,\
+  def __init__(self, query=False,ext=False,limit=False,start=False,type='web'\
                              download=False,useragent=False,recursive=False,force=False):
+	self.type = type
     if limit:
       self.limit = limit
     if start:
@@ -142,7 +143,7 @@ class GoogleLeecher(object):
   def query_google(self):
     self.query = urllib.quote("%s ext:%s" % (self.query, self.ext)) if self.ext else urllib.quote(self.query)
  
-    url = G_DATA_API_URL % (self.query, self.start)
+    url = G_DATA_API_URL % (self.type, self.query, self.start)
 
     try:
       req = urllib2.Request(url)
@@ -310,7 +311,7 @@ class GoogleLeecher(object):
           if action == "A":
             self.download_all = True
             
-          if action == "Y" or action == "A":
+          if action == "Y" or self.download_all:
             result = self.leech(url, filename, titles[urls.index(url)])
         
         if not result:
@@ -341,7 +342,7 @@ class GoogleLeecher(object):
         
     try:
       opts, args = getopt.getopt(argv[1:], "hfdreslu",
-                                 ["help", "force", "download", "recursive", "ext=", "start=", "limit=", "useragent="])
+                                 ["help", "force", "type=", "download", "recursive", "ext=", "start=", "limit=", "useragent="])
       
     except getopt.GetoptError, err:
       self.usage()
@@ -358,6 +359,8 @@ class GoogleLeecher(object):
         self.ext = arg
       elif opt in ("-s", "--start"):
         self.start = int(arg)
+      elif opt in ("-s", "--type"):
+        self.type = arg
       elif opt in ("-f", "--force"):
         self.download = True
         self.download_all = True

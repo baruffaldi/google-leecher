@@ -79,9 +79,9 @@ class GoogleLeecher(object):
   @param useragent: [string] specify the user agent to use
   @param recursive: [bool] get all results
   """
-  def __init__(self, query=False,ext=False,limit=False,start=False,type='web'\
+  def __init__(self, query=False,ext=False,limit=False,start=False,type='web',\
                              download=False,useragent=False,recursive=False,force=False):
-	self.type = type
+    self.type = type
     if limit:
       self.limit = limit
     if start:

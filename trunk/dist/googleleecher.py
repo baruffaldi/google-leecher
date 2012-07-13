@@ -176,7 +176,7 @@ class GoogleLeecher(object):
   @return: bool - download result
   @return: stream - if no one filename specified
   """
-  def leech(self, url, filename=False):
+  def leech(self, url, filename=False, title=False):
     if not self.useragent:
       self.useragent = 'Google Leecher (+http://code.google.com/p/google-leecher)'
     if filename:

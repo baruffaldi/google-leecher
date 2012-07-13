@@ -342,7 +342,7 @@ class GoogleLeecher(object):
         sys.exit()
         
     try:
-      opts, args = getopt.getopt(argv[1:], "hfdreslu",
+      opts, args = getopt.getopt(argv[1:], "hftdreslu",
                                  ["help", "force", "type=", "download", "recursive", "ext=", "start=", "limit=", "useragent="])
       
     except getopt.GetoptError, err:
